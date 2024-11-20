@@ -1,6 +1,5 @@
 #pragma once
 #include <vector>
-
 class MergeSort {
 public:
 	static void Sort(std::vector<int>& tab);

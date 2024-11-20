@@ -1,7 +1,6 @@
 ﻿#include <iostream>
 #include "sort.h"
 
-
 void PrintVector(const std::vector<int>& tab) {
     for (int i = 0; i < tab.size(); ++i) {
         std::cout << tab[i] << " "; 
