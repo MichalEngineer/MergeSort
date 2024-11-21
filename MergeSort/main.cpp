@@ -1,7 +1,7 @@
 ﻿#include <iostream>
 #include "sort.h"
 
-void PrintVector(const std::vector<int>& tab) {
+void PrintVector(const std::vector<int>& tab) { //<-- Funkcja wypisująca vektor
     for (int i = 0; i < tab.size(); ++i) {
         std::cout << tab[i] << " "; 
     }
@@ -10,7 +10,7 @@ void PrintVector(const std::vector<int>& tab) {
 int main()
 {
     std::vector<int> test1 = { 38, 27, 43, 3, 9, 82, 10 };      
-    std::vector<int> test2 = { 1, 2, 3, 4, 5 };                  
+    std::vector<int> test2 = { 13, 2, 33, 42, 5 };                  
 
 
     std::cout << "Test 1 - Przed sortowaniem: ";
