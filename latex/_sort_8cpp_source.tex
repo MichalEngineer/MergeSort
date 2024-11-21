@@ -1,0 +1,47 @@
+\doxysection{Sort.\+cpp}
+\hypertarget{_sort_8cpp_source}{}\label{_sort_8cpp_source}\index{MergeSort/Sort.cpp@{MergeSort/Sort.cpp}}
+\mbox{\hyperlink{_sort_8cpp}{Id≈∫ do dokumentacji tego pliku.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_sort_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{sort_8h}{sort.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_sort_8cpp_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{_sort_8cpp_source_l00003}\mbox{\hyperlink{class_merge_sort_aa5217ebb6343779cc239c8d5ebe56ab1}{00003}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_merge_sort_aa5217ebb6343779cc239c8d5ebe56ab1}{MergeSort::Sort}}(std::vector<int>\&\ tab)\ \{}
+\DoxyCodeLine{\Hypertarget{_sort_8cpp_source_l00004}00004\ \ \ \ \ \textcolor{keywordflow}{if}\ (tab.size()\ <=\ 1)\ \textcolor{keywordflow}{return};\ \textcolor{comment}{//\ <-\/-\/\ Jeúli\ tablica\ ma\ jeden\ lub\ mniej\ elementÛw, nie\ ma\ potrzeby\ sortowaÊ}}
+\DoxyCodeLine{\Hypertarget{_sort_8cpp_source_l00005}00005\ \ \ \ \ \mbox{\hyperlink{class_merge_sort_a8cafb5e0dcf97ca42c3e4a6a33c5986f}{Divide}}(tab,\ 0,\ tab.size()\ -\/\ 1);\ \textcolor{comment}{//\ <-\/-\/\ Rozpoczynamy\ dzielenie\ tablicy\ od\ indeksu\ 0\ do\ ostatniego\ elementu}}
+\DoxyCodeLine{\Hypertarget{_sort_8cpp_source_l00006}00006\ \}}
+\DoxyCodeLine{\Hypertarget{_sort_8cpp_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{_sort_8cpp_source_l00008}\mbox{\hyperlink{class_merge_sort_a8cafb5e0dcf97ca42c3e4a6a33c5986f}{00008}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_merge_sort_a8cafb5e0dcf97ca42c3e4a6a33c5986f}{MergeSort::Divide}}(std::vector<int>\&\ tab,\ \textcolor{keywordtype}{int}\ l,\ \textcolor{keywordtype}{int}\ r)\ \{\ \textcolor{comment}{//\ <-\/-\/\ Funkcja\ jest\ odpowiedzialana\ za\ dzielenie\ tablicy\ na\ mniejsze\ podtablice}}
+\DoxyCodeLine{\Hypertarget{_sort_8cpp_source_l00009}00009\ \ \ \ \ \textcolor{keywordflow}{if}\ (l\ >=\ r)\ \textcolor{keywordflow}{return};\ \textcolor{comment}{//\ <-\/-\/\ Jeúli\ lewy\ indeks\ jest\ wiÍkszy\ lub\ rÛwny\ prawemu,\ oznacza\ to,\ øe\ nie\ ma\ juø\ co\ dzieliÊ (tablica\ ma\ tylko\ jeden\ element)}}
+\DoxyCodeLine{\Hypertarget{_sort_8cpp_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{_sort_8cpp_source_l00011}00011\ \ \ \ \ \textcolor{keywordtype}{int}\ mid\ =\ l\ +\ (r\ -\/\ l)\ /\ 2;\ \textcolor{comment}{//\ <-\/-\/\ Obliczamy\ indeks\ úrodkowy}}
+\DoxyCodeLine{\Hypertarget{_sort_8cpp_source_l00012}00012\ \ \ \ \ \mbox{\hyperlink{class_merge_sort_a8cafb5e0dcf97ca42c3e4a6a33c5986f}{Divide}}(tab,\ l,\ mid);\ \ \ \ \ \ \ \textcolor{comment}{//\ <-\/-\/\ Rekurencyjnie\ dzielimy\ lewπ\ czÍúÊ\ tablicy}}
+\DoxyCodeLine{\Hypertarget{_sort_8cpp_source_l00013}00013\ \ \ \ \ \mbox{\hyperlink{class_merge_sort_a8cafb5e0dcf97ca42c3e4a6a33c5986f}{Divide}}(tab,\ mid\ +\ 1,\ r);\ \ \ \textcolor{comment}{//\ <-\/-\/\ Rekurencyjnie\ dzielimy\ prawπ\ czÍúÊ\ tablicy}}
+\DoxyCodeLine{\Hypertarget{_sort_8cpp_source_l00014}00014\ \ \ \ \ \mbox{\hyperlink{class_merge_sort_a67cb392195e1f8105e5d80e3054b2a90}{Merge}}(tab,\ l,\ mid,\ r);\ \ \ \ \ \textcolor{comment}{//\ <-\/-\/\ Scalanie\ obu\ posortowanych\ czÍúci\ tablicy}}
+\DoxyCodeLine{\Hypertarget{_sort_8cpp_source_l00015}00015\ \}}
+\DoxyCodeLine{\Hypertarget{_sort_8cpp_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{_sort_8cpp_source_l00017}\mbox{\hyperlink{class_merge_sort_a67cb392195e1f8105e5d80e3054b2a90}{00017}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_merge_sort_a67cb392195e1f8105e5d80e3054b2a90}{MergeSort::Merge}}(std::vector<int>\&\ tab,\ \textcolor{keywordtype}{int}\ l,\ \textcolor{keywordtype}{int}\ mid,\ \textcolor{keywordtype}{int}\ r)\ \{}
+\DoxyCodeLine{\Hypertarget{_sort_8cpp_source_l00018}00018\ \ \ \ \ std::vector<int>\ left(tab.begin()\ +\ l,\ tab.begin()\ +\ mid\ +\ 1);\ \textcolor{comment}{//\ <-\/-\/\ Tworzenie\ tablicy\ ktÛra zawiera\ elementy\ lewa\ do\ úrodka\ }}
+\DoxyCodeLine{\Hypertarget{_sort_8cpp_source_l00019}00019\ \ \ \ \ std::vector<int>\ right(tab.begin()\ +\ mid\ +\ 1,\ tab.begin()\ +\ r\ +\ 1);\textcolor{comment}{//\ <-\/-\/\ Tworzenie\ tablicy\ ktÛra zawiera\ elementy\ úrodka\ do\ koÒca }}
+\DoxyCodeLine{\Hypertarget{_sort_8cpp_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{_sort_8cpp_source_l00021}00021\ \ \ \ \ \textcolor{keywordtype}{int}\ i\ =\ 0;\ \textcolor{comment}{//\ <-\/-\/\ indeks\ dla\ lewej\ podtablicy}}
+\DoxyCodeLine{\Hypertarget{_sort_8cpp_source_l00022}00022\ \ \ \ \ \textcolor{keywordtype}{int}\ j\ =\ 0;\ \textcolor{comment}{//\ <-\/-\/\ indeks\ dla\ lewej\ prawej}}
+\DoxyCodeLine{\Hypertarget{_sort_8cpp_source_l00023}00023\ \ \ \ \ \textcolor{keywordtype}{int}\ k\ =\ l;\ \textcolor{comment}{//\ <-\/-\/\ indeks\ dla\ lewej\ g≥Ûwnej}}
+\DoxyCodeLine{\Hypertarget{_sort_8cpp_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{_sort_8cpp_source_l00025}00025\ \ \ \ \ \textcolor{keywordflow}{while}\ (i\ <\ left.size()\ \&\&\ j\ <\ right.size())\ \{\textcolor{comment}{//\ <-\/-\/\ Scalanie\ obu\ podtablic\ to\ tablicy\ g≥Ûwnej\ dopÛki sπ\ elementy\ w\ obu\ podtablicach}}
+\DoxyCodeLine{\Hypertarget{_sort_8cpp_source_l00026}00026\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (left[i]\ <=\ right[j])\ \{\textcolor{comment}{//\ <-\/-\/\ Jeúli\ element\ w\ lewej\ podtablicy\ jest\ mniejszy\ lub\ rÛwny\ elementowi\ w\ prawej}}
+\DoxyCodeLine{\Hypertarget{_sort_8cpp_source_l00027}00027\ \ \ \ \ \ \ \ \ \ \ \ \ tab[k++]\ =\ left[i++];\textcolor{comment}{//\ <-\/-\/\ Wstawiamy\ element\ z\ lewej\ podtablicy\ do\ g≥Ûwnej\ tablicy}}
+\DoxyCodeLine{\Hypertarget{_sort_8cpp_source_l00028}00028\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_sort_8cpp_source_l00029}00029\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{_sort_8cpp_source_l00030}00030\ \ \ \ \ \ \ \ \ \ \ \ \ tab[k++]\ =\ right[j++];\ \textcolor{comment}{//\ <-\/-\/\ Wstawiamy\ element\ z\ prawej\ podtablicy\ do\ g≥Ûwnej\ tablicy}}
+\DoxyCodeLine{\Hypertarget{_sort_8cpp_source_l00031}00031\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_sort_8cpp_source_l00032}00032\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_sort_8cpp_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{_sort_8cpp_source_l00034}00034\ \ \ \ \ \textcolor{keywordflow}{while}\ (i\ <\ left.size())\ \{\textcolor{comment}{//\ <-\/-\/\ Jeøeli\ pozosta≥y\ elementy\ w\ lewej\ podtablicy,\ wstawiamy\ je\ do\ g≥Ûwnej\ tablicy}}
+\DoxyCodeLine{\Hypertarget{_sort_8cpp_source_l00035}00035\ \ \ \ \ \ \ \ \ tab[k++]\ =\ left[i++];\ \textcolor{comment}{//\ <-\/-\/\ Przenosimy\ pozosta≥e\ elementy\ z\ lewej\ podtablicy}}
+\DoxyCodeLine{\Hypertarget{_sort_8cpp_source_l00036}00036\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_sort_8cpp_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{_sort_8cpp_source_l00038}00038\ \ \ \ \ \textcolor{keywordflow}{while}\ (j\ <\ right.size())\ \{\textcolor{comment}{//\ <-\/-\/\ Jeúli\ pozosta≥y\ elementy\ w\ prawej\ podtablicy,\ wstawiamy\ je\ do\ g≥Ûwnej\ tablicy}}
+\DoxyCodeLine{\Hypertarget{_sort_8cpp_source_l00039}00039\ \ \ \ \ \ \ \ \ tab[k++]\ =\ right[j++];\ \textcolor{comment}{//\ <-\/-\/\ Przenosimy\ pozosta≥e\ elementy\ z\ prawej\ podtablicy}}
+\DoxyCodeLine{\Hypertarget{_sort_8cpp_source_l00040}00040\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_sort_8cpp_source_l00041}00041\ \}}
+
+\end{DoxyCode}

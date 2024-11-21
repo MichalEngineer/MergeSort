@@ -1,0 +1,109 @@
+\doxysection{Dokumentacja klasy Merge\+Sort}
+\hypertarget{class_merge_sort}{}\label{class_merge_sort}\index{MergeSort@{MergeSort}}
+
+
+Klasa implementuj¹ca algorytm \doxylink{class_merge_sort}{Merge\+Sort}.  
+
+
+
+
+{\ttfamily \#include $<$sort.\+h$>$}
+
+\doxysubsubsection*{Statyczne metody publiczne}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{class_merge_sort_aa5217ebb6343779cc239c8d5ebe56ab1}{Sort}} (std\+::vector$<$ int $>$ \&tab)
+\begin{DoxyCompactList}\small\item\em Funkcja sortuj¹ca tablicê przy u¿yciu algorytmu \doxylink{class_merge_sort}{Merge\+Sort}. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_merge_sort_a8cafb5e0dcf97ca42c3e4a6a33c5986f}{Divide}} (std\+::vector$<$ int $>$ \&tab, int l, int r)
+\begin{DoxyCompactList}\small\item\em Funkcja dziel¹ca tablicê na dwie czêœci do dalszego sortowania. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_merge_sort_a67cb392195e1f8105e5d80e3054b2a90}{Merge}} (std\+::vector$<$ int $>$ \&tab, int l, int mid, int r)
+\begin{DoxyCompactList}\small\item\em Funkcja scala dwie posortowane czêœci tablicy w jedn¹ posortowan¹ ca³oœæ. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Opis szczegÃ³Å‚owy}
+Klasa implementuj¹ca algorytm \doxylink{class_merge_sort}{Merge\+Sort}. 
+
+Definicja w linii \mbox{\hyperlink{sort_8h_source_l00007}{7}} pliku \mbox{\hyperlink{sort_8h_source}{sort.\+h}}.
+
+
+
+\doxysubsection{Dokumentacja funkcji skÅ‚adowych}
+\Hypertarget{class_merge_sort_a8cafb5e0dcf97ca42c3e4a6a33c5986f}\index{MergeSort@{MergeSort}!Divide@{Divide}}
+\index{Divide@{Divide}!MergeSort@{MergeSort}}
+\doxysubsubsection{\texorpdfstring{Divide()}{Divide()}}
+{\footnotesize\ttfamily \label{class_merge_sort_a8cafb5e0dcf97ca42c3e4a6a33c5986f} 
+void Merge\+Sort\+::\+Divide (\begin{DoxyParamCaption}\item[{std\+::vector$<$ int $>$ \&}]{tab}{, }\item[{int}]{l}{, }\item[{int}]{r}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Funkcja dziel¹ca tablicê na dwie czêœci do dalszego sortowania. 
+
+Funkcja ta dzieli tablicê na dwie czêœci na podstawie indeksów lewego (l) i prawego (r) granicy. Nastêpnie wywo³uje rekurencyjnie sortowanie dla obu czêœci.
+
+
+\begin{DoxyParams}{Parametry}
+{\em tab} & Referencja do tablicy, która ma zostaæ podzielona. \\
+\hline
+{\em l} & Indeks pocz¹tkowy lewej czêœci tablicy. \\
+\hline
+{\em r} & Indeks koñcowy prawej czêœci tablicy. \\
+\hline
+\end{DoxyParams}
+
+
+Definicja w linii \mbox{\hyperlink{_sort_8cpp_source_l00008}{8}} pliku \mbox{\hyperlink{_sort_8cpp_source}{Sort.\+cpp}}.
+
+\Hypertarget{class_merge_sort_a67cb392195e1f8105e5d80e3054b2a90}\index{MergeSort@{MergeSort}!Merge@{Merge}}
+\index{Merge@{Merge}!MergeSort@{MergeSort}}
+\doxysubsubsection{\texorpdfstring{Merge()}{Merge()}}
+{\footnotesize\ttfamily \label{class_merge_sort_a67cb392195e1f8105e5d80e3054b2a90} 
+void Merge\+Sort\+::\+Merge (\begin{DoxyParamCaption}\item[{std\+::vector$<$ int $>$ \&}]{tab}{, }\item[{int}]{l}{, }\item[{int}]{mid}{, }\item[{int}]{r}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Funkcja scala dwie posortowane czêœci tablicy w jedn¹ posortowan¹ ca³oœæ. 
+
+Ta funkcja ³¹czy dwie posortowane czêœci tablicy w jeden ci¹g w sposób wydajny, zachowuj¹c porz¹dek rosn¹cy. Operacja scalania jest kluczow¹ czêœci¹ algorytmu \doxylink{class_merge_sort}{Merge\+Sort}.
+
+
+\begin{DoxyParams}{Parametry}
+{\em tab} & Referencja do tablicy, w której odbywa siê scalanie. \\
+\hline
+{\em l} & Indeks pocz¹tkowy lewej czêœci tablicy. \\
+\hline
+{\em mid} & Indeks œrodkowy, który dzieli tablicê na dwie czêœci. \\
+\hline
+{\em r} & Indeks koñcowy prawej czêœci tablicy. \\
+\hline
+\end{DoxyParams}
+
+
+Definicja w linii \mbox{\hyperlink{_sort_8cpp_source_l00017}{17}} pliku \mbox{\hyperlink{_sort_8cpp_source}{Sort.\+cpp}}.
+
+\Hypertarget{class_merge_sort_aa5217ebb6343779cc239c8d5ebe56ab1}\index{MergeSort@{MergeSort}!Sort@{Sort}}
+\index{Sort@{Sort}!MergeSort@{MergeSort}}
+\doxysubsubsection{\texorpdfstring{Sort()}{Sort()}}
+{\footnotesize\ttfamily \label{class_merge_sort_aa5217ebb6343779cc239c8d5ebe56ab1} 
+void Merge\+Sort\+::\+Sort (\begin{DoxyParamCaption}\item[{std\+::vector$<$ int $>$ \&}]{tab}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Funkcja sortuj¹ca tablicê przy u¿yciu algorytmu \doxylink{class_merge_sort}{Merge\+Sort}. 
+
+Ta funkcja jest wywo³ywana w celu rozpoczêcia procesu sortowania tablicy. U¿ywa algorytmu \doxylink{class_merge_sort}{Merge\+Sort}, który dzieli tablicê na mniejsze czêœci i scala je w posortowan¹ ca³oœæ.
+
+
+\begin{DoxyParams}{Parametry}
+{\em tab} & Referencja do tablicy, która ma zostaæ posortowana. \\
+\hline
+\end{DoxyParams}
+
+
+Definicja w linii \mbox{\hyperlink{_sort_8cpp_source_l00003}{3}} pliku \mbox{\hyperlink{_sort_8cpp_source}{Sort.\+cpp}}.
+
+
+
+Dokumentacja dla tej klasy zostaÅ‚a wygenerowana z plikÃ³w\+:\begin{DoxyCompactItemize}
+\item 
+Merge\+Sort/\mbox{\hyperlink{sort_8h}{sort.\+h}}\item 
+Merge\+Sort/\mbox{\hyperlink{_sort_8cpp}{Sort.\+cpp}}\end{DoxyCompactItemize}
